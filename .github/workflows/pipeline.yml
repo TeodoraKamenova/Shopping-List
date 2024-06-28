@@ -31,6 +31,5 @@ jobs:
         with:
           service-id: ${{ secrets.srv-cpv7amhu0jms73am29e0 }}
           api-key: ${{ secrets.rnd_mFfWROqLJexsc5USe1jMn4oCPPZL}}
-          wait-for-success: true
 
   
