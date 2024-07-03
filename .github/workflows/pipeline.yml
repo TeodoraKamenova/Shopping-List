@@ -21,10 +21,49 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm install
+
+  unit-tests:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    - name: Use Node.js 20x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Install npm dependencies
+      run: npm install
+    - name: Run unit tests
+      run: npm run test:unit
+  
+  
+  ui-tests:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    - name: Use Node.js 20x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Install npm dependencies
+      run: npm install
+    - name: Install Playwright browsers
+      run: npx playwright install 
+    - name: Start the application
+      run: npm run start &
+    - name: Execute the UI tests
+      run: npm run test:ui
       
   deploy: 
    runs-on: ubuntu-latest
-   needs: build
+   needs: [unit-tests, ui-tests]
    steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
