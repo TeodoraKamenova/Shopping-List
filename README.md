@@ -3,8 +3,12 @@
 ## Idea 
 This a Node.js demo application for the DevOps course at SoftUni. 
 ***
+## GitHub Actions
+A GitHub Actions workflow is implamented. It consists of Build, Tests:Unit, Tests:UI and auto Deploy on render.com on each commit to the main branch.
+***
 ## Deployed
-The app is deloped on **render.com**. Here is the link: **https://shopping-list-nu5w.onrender.com**.
+The app is deloyed on **render.com**. Here is the link: **https://shopping-list-nu5w.onrender.com**.
+***
 ## Screenshots
 <img width="954" alt="image" src="https://github.com/TeodoraKamenova/Shopping-List/assets/97409351/313fec00-17d4-4970-8a38-1a599da75929">
 <img width="950" alt="image" src="https://github.com/TeodoraKamenova/Shopping-List/assets/97409351/11f9f407-569c-49f0-9585-fb8c46c4c63a">
